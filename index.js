@@ -21,8 +21,8 @@ const io = socketIO(server);
 io.on('connection', function(socket){
 	console.log('New Connection!')
 
-	socket.on('message',function(data){
-		socket.broadcast.emit('message',data)
+	socket.on('chat',function(data){
+		socket.broadcast.emit('chat',data)
 	})
 socket.on('disconnect', () => console.log('Disconnected'));
 }) //can use client instead of socket!
